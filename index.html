@@ -56,8 +56,10 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            display: block; /* Makes entire area clickable */
-            padding: 10px;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
         
         nav ul li a:hover {
@@ -93,6 +95,9 @@
             border-radius: 5px;
             font-weight: 500;
             margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
         
         .btn:hover {
@@ -139,6 +144,39 @@
         .topic-content h3 {
             color: #2c3e50;
             margin-bottom: 10px;
+        }
+        
+        /* Content sections that appear after clicking */
+        .content-section {
+            display: none;
+            padding: 30px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .content-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .content-section p {
+            margin-bottom: 15px;
+        }
+        
+        .close-btn {
+            background-color: #95a5a6;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        
+        .close-btn:hover {
+            background-color: #7f8c8d;
         }
         
         /* Footer */
@@ -191,26 +229,26 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#history">History</a></li>
-                <li><a href="#teachings">Teachings</a></li>
-                <li><a href="#schools">Schools</a></li>
-                <li><a href="#meditation">Meditation</a></li>
-                <li><a href="#resources">Resources</a></li>
+                <li><a href="#" onclick="showContent('home-content')">Home</a></li>
+                <li><a href="#" onclick="showContent('history-content')">History</a></li>
+                <li><a href="#" onclick="showContent('teachings-content')">Teachings</a></li>
+                <li><a href="#" onclick="showContent('schools-content')">Schools</a></li>
+                <li><a href="#" onclick="showContent('meditation-content')">Meditation</a></li>
+                <li><a href="#" onclick="showContent('resources-content')">Resources</a></li>
             </ul>
         </div>
     </nav>
     
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="container">
             <h2>Discover Buddhist Wisdom Through the Ages</h2>
             <p>Eons is a free resource to explore the rich history and deep philosophy of Buddhism, from its origins to modern practices.</p>
-            <a href="#topics" class="btn">Start Learning</a>
-            <a href="#resources" class="btn">Resources</a>
+            <button class="btn" onclick="showContent('start-content')">Start Learning</button>
+            <button class="btn" onclick="showContent('resources-content')">Resources</button>
         </div>
     </section>
     
-    <section class="container" id="topics">
+    <section class="container">
         <h2 class="section-title">Explore Topics</h2>
         <div class="topics">
             <div class="topic-card">
@@ -218,7 +256,7 @@
                 <div class="topic-content">
                     <h3>Life of the Buddha</h3>
                     <p>Learn about Siddhartha Gautama's journey to enlightenment and his teachings.</p>
-                    <a href="#" class="btn">Read More</a>
+                    <button class="btn" onclick="showContent('buddha-content')">Read More</button>
                 </div>
             </div>
             
@@ -227,7 +265,7 @@
                 <div class="topic-content">
                     <h3>Sacred Texts</h3>
                     <p>Explore the Sutras, Vinaya, Abhidharma and other important Buddhist scriptures.</p>
-                    <a href="#" class="btn">Read More</a>
+                    <button class="btn" onclick="showContent('texts-content')">Read More</button>
                 </div>
             </div>
             
@@ -236,20 +274,20 @@
                 <div class="topic-content">
                     <h3>Meditation Practices</h3>
                     <p>Learn about different meditation techniques in various Buddhist traditions.</p>
-                    <a href="#" class="btn">Read More</a>
+                    <button class="btn" onclick="showContent('meditation-content')">Read More</button>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="container" id="resources">
+    <section class="container">
         <h2 class="section-title">Buddhist Traditions</h2>
         <div class="topics">
             <div class="topic-card">
                 <div class="topic-content">
                     <h3>Theravada</h3>
                     <p>The "Way of the Elders," focused on the earliest Buddhist texts and personal enlightenment.</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <button class="btn" onclick="showContent('theravada-content')">Learn More</button>
                 </div>
             </div>
             
@@ -257,7 +295,7 @@
                 <div class="topic-content">
                     <h3>Mahayana</h3>
                     <p>The "Great Vehicle," emphasizing compassion and the ideal of the Bodhisattva.</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <button class="btn" onclick="showContent('mahayana-content')">Learn More</button>
                 </div>
             </div>
             
@@ -265,11 +303,73 @@
                 <div class="topic-content">
                     <h3>Vajrayana</h3>
                     <p>The "Diamond Vehicle," using tantric practices to achieve enlightenment quickly.</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <button class="btn" onclick="showContent('vajrayana-content')">Learn More</button>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Content Sections that appear after clicking -->
+    <div id="buddha-content" class="content-section container">
+        <h3>Life of the Buddha</h3>
+        <p>Siddhartha Gautama, who would become the Buddha, was born in the 5th century BCE in what is now Nepal. Born a prince, he lived a life of luxury but was moved by the suffering he saw outside the palace walls.</p>
+        <p>At the age of 29, he left his palace and family to seek enlightenment. After years of ascetic practices and meditation, he attained enlightenment under the Bodhi tree at Bodh Gaya.</p>
+        <p>The Buddha then spent the next 45 years teaching the path to enlightenment throughout northeastern India.</p>
+        <button class="close-btn" onclick="hideContent('buddha-content')">Close</button>
+    </div>
+    
+    <div id="texts-content" class="content-section container">
+        <h3>Sacred Texts of Buddhism</h3>
+        <p>Buddhist scriptures are extensive and varied, with each tradition having its own collection of texts.</p>
+        <p><strong>The Pali Canon</strong> (Tipitaka) is the earliest collection of Buddhist scriptures, preserved by the Theravada tradition. It consists of three "baskets": the Vinaya Pitaka (monastic rules), Sutta Pitaka (discourses), and Abhidhamma Pitaka (philosophical analysis).</p>
+        <p><strong>Mahayana Sutras</strong> include well-known texts like the Lotus Sutra, Heart Sutra, and Diamond Sutra, which emphasize the bodhisattva path and emptiness (shunyata).</p>
+        <button class="close-btn" onclick="hideContent('texts-content')">Close</button>
+    </div>
+    
+    <div id="meditation-content" class="content-section container">
+        <h3>Buddhist Meditation Practices</h3>
+        <p>Meditation is central to Buddhist practice, with two main types found across traditions:</p>
+        <p><strong>Samatha</strong> (calm abiding) meditation develops concentration and mindfulness through focusing on an object, often the breath.</p>
+        <p><strong>Vipassana</strong> (insight) meditation cultivates awareness of the true nature of reality, particularly the three marks of existence: impermanence, suffering, and non-self.</p>
+        <p>Different Buddhist traditions have developed various meditation techniques, including Zen sitting meditation, Tibetan visualizations, and loving-kindness (metta) meditation.</p>
+        <button class="close-btn" onclick="hideContent('meditation-content')">Close</button>
+    </div>
+    
+    <div id="theravada-content" class="content-section container">
+        <h3>Theravada Buddhism</h3>
+        <p>Theravada, meaning "Way of the Elders," is the oldest surviving Buddhist school. It is predominant in Sri Lanka, Myanmar, Thailand, Laos, and Cambodia.</p>
+        <p>Theravada emphasizes the original teachings of the Buddha as preserved in the Pali Canon. The ideal figure is the arhat, one who has attained nirvana through their own efforts.</p>
+        <p>Practice focuses on the Noble Eightfold Path, meditation, and monastic discipline. Laypeople support the monastic community and practice generosity and morality.</p>
+        <button class="close-btn" onclick="hideContent('theravada-content')">Close</button>
+    </div>
+    
+    <div id="mahayana-content" class="content-section container">
+        <h3>Mahayana Buddhism</h3>
+        <p>Mahayana, or the "Great Vehicle," emerged around the 1st century BCE and spread throughout East Asia and to Tibet.</p>
+        <p>This tradition emphasizes the bodhisattva ideal—beings who seek enlightenment not just for themselves but for all sentient beings. Key concepts include sunyata (emptiness), skillful means, and Buddha-nature.</p>
+        <p>Major Mahayana schools include Zen, Pure Land, Nichiren, and Tiantai. Mahayana is predominant in China, Japan, Korea, Vietnam, and Tibet.</p>
+        <button class="close-btn" onclick="hideContent('mahayana-content')">Close</button>
+    </div>
+    
+    <div id="vajrayana-content" class="content-section container">
+        <h3>Vajrayana Buddhism</h3>
+        <p>Vajrayana, or the "Diamond Vehicle," is often considered a form of Mahayana Buddhism but with distinctive practices. It is predominant in Tibet, Bhutan, and Mongolia.</p>
+        <p>Vajrayana incorporates tantric practices, including deity yoga, mantras, mandalas, and advanced meditation techniques. It emphasizes the possibility of achieving enlightenment in a single lifetime.</p>
+        <p>This tradition is known for its rich symbolism, complex rituals, and the importance of the guru-disciple relationship. The Dalai Lama is the most well-known figure of Tibetan Buddhism.</p>
+        <button class="close-btn" onclick="hideContent('vajrayana-content')">Close</button>
+    </div>
+    
+    <div id="resources-content" class="content-section container">
+        <h3>Resources for Further Study</h3>
+        <p>If you're interested in learning more about Buddhism, here are some resources:</p>
+        <ul>
+            <li><strong>Books:</strong> "What the Buddha Taught" by Walpola Rahula, "The Heart of the Buddha's Teaching" by Thich Nhat Hanh</li>
+            <li><strong>Websites:</strong> Access to Insight (accesstoinsight.org), Buddhanet (buddhanet.net)</li>
+            <li><strong>Centers:</strong> Look for local meditation centers or temples in your area</li>
+            <li><strong>Online courses:</strong> Coursera, edX, and other platforms offer Buddhism courses</li>
+        </ul>
+        <button class="close-btn" onclick="hideContent('resources-content')">Close</button>
+    </div>
     
     <footer>
         <div class="container">
@@ -278,5 +378,26 @@
             <p>Made with compassion for all beings</p>
         </div>
     </footer>
+
+    <script>
+        // JavaScript to show and hide content sections
+        function showContent(contentId) {
+            // Hide all content sections first
+            var contents = document.getElementsByClassName('content-section');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+            
+            // Show the selected content
+            document.getElementById(contentId).style.display = 'block';
+            
+            // Scroll to the content
+            document.getElementById(contentId).scrollIntoView({behavior: 'smooth'});
+        }
+        
+        function hideContent(contentId) {
+            document.getElementById(contentId).style.display = 'none';
+        }
+    </script>
 </body>
 </html>
