@@ -41,6 +41,25 @@
         .button-primary:hover {
             background-color: #E68A00;
         }
+        /* Ensure images are fluid and larger */
+        .large-image {
+            width: 100%;
+            height: auto;
+            max-width: 900px; /* Increased max width for a bigger appearance */
+        }
+        /* Update the flex container to handle the larger images */
+        .image-text-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .image-text-container {
+                flex-direction: row;
+            }
+            .image-text-container.reverse {
+                flex-direction: row-reverse;
+            }
+        }
     </style>
 </head>
 <body class="selection:bg-[#A0522D] selection:text-white">
@@ -68,7 +87,8 @@
         <!-- Home Section -->
         <section id="home_section" class="min-h-screen flex flex-col justify-center items-center text-center">
             <div class="bg-white rounded-lg shadow-xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8">
-                <img src="https://placehold.co/400x400/D2691E/white?text=Buddha+Statue" alt="Serene Buddha statue in meditation" class="rounded-lg shadow-lg w-full md:w-1/2">
+                <!-- Image for the Home section -->
+                <img src="https://presentingnepal.com/wp-content/uploads/2024/12/Boudhanath-Stupa.-Kathmandu-Nepal-meghraj-neupane-scaled.webp" alt="The Boudhanath Stupa in Kathmandu, Nepal" class="rounded-lg shadow-lg large-image">
                 <div class="text-left">
                     <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#A0522D]">Welcome to Eons</h2>
                     <p class="text-lg leading-relaxed text-gray-700">
@@ -82,8 +102,9 @@
         <section id="history_section" class="py-16 md:py-24">
             <div class="bg-white rounded-lg shadow-xl p-8 max-w-6xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#A0522D]">A Journey Through History</h2>
-                <div class="flex flex-col md:flex-row items-center md:space-x-8">
-                    <img src="https://placehold.co/400x500/D2691E/white?text=Pagoda" alt="A grand Buddhist pagoda" class="rounded-lg shadow-lg mb-8 md:mb-0 w-full md:w-1/2">
+                <div class="flex image-text-container items-center md:space-x-8">
+                    <!-- Image for the History section -->
+                    <img src="https://i.natgeofe.com/n/95f6d0ed-f811-4fdd-a7e4-0f9deb74c083/Bagan2.jpg" alt="Aerial view of ancient Buddhist pagodas in Bagan, Myanmar" class="rounded-lg shadow-lg mb-8 md:mb-0 large-image">
                     <div class="text-lg leading-relaxed text-gray-700">
                         <p class="mb-6">
                             Buddhism began over 2,500 years ago with a man named Siddhartha Gautama in ancient India. Born into a wealthy royal family, he lived a life of luxury, but he felt a deep sense of unease. He saw suffering everywhere—old age, sickness, and death—and decided to leave his palace to find a way to end this suffering. After years of wandering and searching, he sat under a Bodhi tree and meditated deeply until he achieved enlightenment, becoming the Buddha, which means "The Awakened One."
@@ -103,8 +124,9 @@
         <section id="teachings_section" class="py-16 md:py-24">
             <div class="bg-white rounded-lg shadow-xl p-8 max-w-6xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#A0522D]">The Core Philosophy</h2>
-                <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8">
-                    <img src="https://placehold.co/400x500/D2691E/white?text=Buddhist+Art" alt="An ancient piece of Buddhist art" class="rounded-lg shadow-lg mb-8 md:mb-0 w-full md:w-1/2">
+                <div class="flex image-text-container reverse items-center md:space-x-reverse md:space-x-8">
+                    <!-- Image for the Teachings section -->
+                    <img src="https://cdn.originalbuddhas.com/pages/uploads/101210/conversions/Thangka-Painting-large.jpg" alt="A colorful and detailed Buddhist Thangka painting" class="rounded-lg shadow-lg mb-8 md:mb-0 large-image">
                     <div class="text-lg leading-relaxed text-gray-700">
                         <p class="mb-6">
                             At the heart of Buddhist philosophy are the **Four Noble Truths**. They are a simple framework for understanding our experience of life.
@@ -125,18 +147,23 @@
 
         <!-- Schools Section -->
         <section id="schools_section" class="py-16 md:py-24">
-            <div class="bg-white rounded-lg shadow-xl p-8 max-w-4xl mx-auto">
+            <div class="bg-white rounded-lg shadow-xl p-8 max-w-6xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#A0522D]">Different Paths, Same Goal</h2>
-                <div class="text-lg leading-relaxed text-gray-700">
-                    <p class="mb-6">
-                        Over time, Buddhism developed into different schools of thought. The two main branches are **Theravada** and **Mahayana**.
-                    </p>
-                    <p class="mb-6">
-                        **Theravada** Buddhism is the oldest surviving school and is popular in countries like Thailand, Sri Lanka, and Myanmar. It focuses on the teachings of the Pali Canon and aims for individual enlightenment.
-                    </p>
-                    <p>
-                        **Mahayana** Buddhism is practiced in places like China, Japan, Korea, and Vietnam. It emphasizes the goal of becoming a Bodhisattva—an enlightened being who chooses to stay and help all other beings reach enlightenment.
-                    </p>
+                <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                    <!-- Images for the Schools section -->
+                    <img src="https://thailandmagazine.com/wp-content/uploads/2025/04/Wat-Pho-Bangkok-Thailand-2-1024x684.webp" alt="A large reclining Buddha statue inside a temple" class="rounded-lg shadow-lg mb-8 md:mb-0 large-image">
+                    <img src="https://smarthistory.org/wp-content/uploads/2021/12/Leshan_Giant_Buddha_1-scaled.jpg" alt="The massive Leshan Giant Buddha carved into a cliffside" class="rounded-lg shadow-lg mb-8 md:mb-0 large-image">
+                    <div class="text-lg leading-relaxed text-gray-700">
+                        <p class="mb-6">
+                            Over time, Buddhism developed into different schools of thought. The two main branches are **Theravada** and **Mahayana**.
+                        </p>
+                        <p class="mb-6">
+                            **Theravada** Buddhism is the oldest surviving school and is popular in countries like Thailand, Sri Lanka, and Myanmar. It focuses on the teachings of the Pali Canon and aims for individual enlightenment.
+                        </p>
+                        <p>
+                            **Mahayana** Buddhism is practiced in places like China, Japan, Korea, and Vietnam. It emphasizes the goal of becoming a Bodhisattva—an enlightened being who chooses to stay and help all other beings reach enlightenment.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -145,8 +172,9 @@
         <section id="meditation_section" class="py-16 md:py-24">
             <div class="bg-white rounded-lg shadow-xl p-8 max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#A0522D]">The Practice of Meditation</h2>
-                <div class="flex flex-col md:flex-row items-center md:space-x-8">
-                    <img src="https://placehold.co/400x400/D2691E/white?text=Meditation+Garden" alt="A tranquil meditation garden" class="rounded-lg shadow-lg mb-8 md:mb-0 w-full md:w-1/2">
+                <div class="flex image-text-container items-center md:space-x-8">
+                    <!-- Image for the Meditation section -->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV9SDCT8bQVkwb3qNxvtJLJouSfp2tNi7sHg&s" alt="A monk meditating in a peaceful setting" class="rounded-lg shadow-lg large-image">
                     <div class="text-lg leading-relaxed text-gray-700">
                         <p class="mb-6">
                             Meditation is a key practice in Buddhism for training the mind. A simple way to start is with mindfulness of breath.
@@ -170,15 +198,19 @@
         <section id="books_section" class="py-16 md:py-24">
             <div class="bg-white rounded-lg shadow-xl p-8 max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#A0522D]">Recommended Books</h2>
-                <div class="text-lg leading-relaxed text-gray-700">
-                    <p class="mb-6">
-                        If you want to learn more, here are some great books for beginners:
-                    </p>
-                    <ul class="list-disc list-inside space-y-4">
-                        <li><strong>The Heart of the Buddha's Teaching</strong> by Thich Nhat Hanh: A simple and clear guide to the core concepts of Buddhism.</li>
-                        <li><strong>What the Buddha Taught</strong> by Walpola Rahula: A classic text that provides a straightforward look at the fundamentals of Buddhist philosophy.</li>
-                        <li><strong>Mindfulness in Plain English</strong> by Bhante Gunaratana: An excellent and practical guide for anyone interested in starting a meditation practice.</li>
-                    </ul>
+                <div class="flex image-text-container reverse items-center md:space-x-reverse md:space-x-8">
+                    <!-- New image for the Books section -->
+                    <img src="https://www.getty.edu/360/event_images/dunhuang.jpg" alt="A view of the ancient Dunhuang Grottoes, famous for their Buddhist texts" class="rounded-lg shadow-lg large-image">
+                    <div class="text-lg leading-relaxed text-gray-700">
+                        <p class="mb-6">
+                            If you want to learn more, here are some great books for beginners:
+                        </p>
+                        <ul class="list-disc list-inside space-y-4">
+                            <li><strong>The Heart of the Buddha's Teaching</strong> by Thich Nhat Hanh: A simple and clear guide to the core concepts of Buddhism.</li>
+                            <li><strong>What the Buddha Taught</strong> by Walpola Rahula: A classic text that provides a straightforward look at the fundamentals of Buddhist philosophy.</li>
+                            <li><strong>Mindfulness in Plain English</strong> by Bhante Gunaratana: An excellent and practical guide for anyone interested in starting a meditation practice.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
