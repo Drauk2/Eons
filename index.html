@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eons - Buddhist History and Philosophy</title>
     <style>
-        /* Basic styling */
         * {
             margin: 0;
             padding: 0;
@@ -57,10 +56,13 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
+            display: block; /* Makes entire area clickable */
+            padding: 10px;
         }
         
         nav ul li a:hover {
             color: #f1c40f;
+            background-color: #2c3e50;
         }
         
         /* Main content */
@@ -90,6 +92,7 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 500;
+            margin: 10px;
         }
         
         .btn:hover {
@@ -151,6 +154,11 @@
             margin: 10px 0;
         }
         
+        footer a {
+            color: #f1c40f;
+            text-decoration: none;
+        }
+        
         /* Responsive design */
         @media (max-width: 768px) {
             nav ul {
@@ -183,25 +191,26 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Teachings</a></li>
-                <li><a href="#">Schools</a></li>
-                <li><a href="#">Meditation</a></li>
-                <li><a href="#">Resources</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#teachings">Teachings</a></li>
+                <li><a href="#schools">Schools</a></li>
+                <li><a href="#meditation">Meditation</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </div>
     </nav>
     
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <h2>Discover Buddhist Wisdom Through the Ages</h2>
             <p>Eons is a free resource to explore the rich history and deep philosophy of Buddhism, from its origins to modern practices.</p>
-            <a href="#" class="btn">Start Learning</a>
+            <a href="#topics" class="btn">Start Learning</a>
+            <a href="#resources" class="btn">Resources</a>
         </div>
     </section>
     
-    <section class="container">
+    <section class="container" id="topics">
         <h2 class="section-title">Explore Topics</h2>
         <div class="topics">
             <div class="topic-card">
@@ -233,13 +242,14 @@
         </div>
     </section>
     
-    <section class="container">
+    <section class="container" id="resources">
         <h2 class="section-title">Buddhist Traditions</h2>
         <div class="topics">
             <div class="topic-card">
                 <div class="topic-content">
                     <h3>Theravada</h3>
                     <p>The "Way of the Elders," focused on the earliest Buddhist texts and personal enlightenment.</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
             </div>
             
@@ -247,6 +257,7 @@
                 <div class="topic-content">
                     <h3>Mahayana</h3>
                     <p>The "Great Vehicle," emphasizing compassion and the ideal of the Bodhisattva.</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
             </div>
             
@@ -254,6 +265,7 @@
                 <div class="topic-content">
                     <h3>Vajrayana</h3>
                     <p>The "Diamond Vehicle," using tantric practices to achieve enlightenment quickly.</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
             </div>
         </div>
@@ -262,7 +274,7 @@
     <footer>
         <div class="container">
             <p>Eons - Buddhist History and Philosophy</p>
-            <p>This project is open source on <a href="https://github.com" style="color: #f1c40f;">GitHub</a></p>
+            <p>This project is open source on <a href="https://github.com">GitHub</a></p>
             <p>Made with compassion for all beings</p>
         </div>
     </footer>
