@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eons - Buddhist History and Philosophy</title>
+    <style>
+        /* Basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f7f1;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        nav {
+            background-color: #34495e;
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover {
+            color: #f1c40f;
+        }
+        
+        /* Main content */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #ecf0f1;
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 40px 0 30px;
+            color: #2c3e50;
+            font-size: 2rem;
+        }
+        
+        /* Topics grid */
+        .topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+        
+        .topic-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .topic-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .topic-content {
+            padding: 20px;
+        }
+        
+        .topic-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin: 10px 0;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Eons</h1>
+            <p>Learn Buddhist History and Philosophy</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Teachings</a></li>
+                <li><a href="#">Schools</a></li>
+                <li><a href="#">Meditation</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>Discover Buddhist Wisdom Through the Ages</h2>
+            <p>Eons is a free resource to explore the rich history and deep philosophy of Buddhism, from its origins to modern practices.</p>
+            <a href="#" class="btn">Start Learning</a>
+        </div>
+    </section>
+    
+    <section class="container">
+        <h2 class="section-title">Explore Topics</h2>
+        <div class="topics">
+            <div class="topic-card">
+                <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80" alt="Buddha statue">
+                <div class="topic-content">
+                    <h3>Life of the Buddha</h3>
+                    <p>Learn about Siddhartha Gautama's journey to enlightenment and his teachings.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="topic-card">
+                <img src="https://images.unsplash.com/photo-1584809009755-14c01cac01d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80" alt="Ancient texts">
+                <div class="topic-content">
+                    <h3>Sacred Texts</h3>
+                    <p>Explore the Sutras, Vinaya, Abhidharma and other important Buddhist scriptures.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="topic-card">
+                <img src="https://images.unsplash.com/photo-1530651788726-9a6edd8ab432?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80" alt="Meditation">
+                <div class="topic-content">
+                    <h3>Meditation Practices</h3>
+                    <p>Learn about different meditation techniques in various Buddhist traditions.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container">
+        <h2 class="section-title">Buddhist Traditions</h2>
+        <div class="topics">
+            <div class="topic-card">
+                <div class="topic-content">
+                    <h3>Theravada</h3>
+                    <p>The "Way of the Elders," focused on the earliest Buddhist texts and personal enlightenment.</p>
+                </div>
+            </div>
+            
+            <div class="topic-card">
+                <div class="topic-content">
+                    <h3>Mahayana</h3>
+                    <p>The "Great Vehicle," emphasizing compassion and the ideal of the Bodhisattva.</p>
+                </div>
+            </div>
+            
+            <div class="topic-card">
+                <div class="topic-content">
+                    <h3>Vajrayana</h3>
+                    <p>The "Diamond Vehicle," using tantric practices to achieve enlightenment quickly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>Eons - Buddhist History and Philosophy</p>
+            <p>This project is open source on <a href="https://github.com" style="color: #f1c40f;">GitHub</a></p>
+            <p>Made with compassion for all beings</p>
+        </div>
+    </footer>
+</body>
+</html>
