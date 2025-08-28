@@ -3,575 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eons - Buddhist Wisdom & Philosophy</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Eons - A Journey into Buddhism</title>
+    <!-- Use Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use a simple, clean font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        :root {
-            --primary: #8E7C68;
-            --secondary: #D8C4A6;
-            --accent: #C2B8A3;
-            --dark: #5C4B3F;
-            --light: #F8F4E9;
-            --text: #333333;
-        }
-        
         body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23c2b8a3' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F4E1; /* A light, warm off-white color */
+            color: #4A4A4A; /* A soft, dark gray */
+            scroll-behavior: smooth; /* Smooth scrolling for navigation links */
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* Custom styles for a Buddhist-inspired aesthetic */
+        .header-bg {
+            background-color: #A0522D; /* A deep, warm maroon */
         }
-        
-        /* Header */
-        header {
-            background: linear-gradient(to right, var(--dark), var(--primary));
+        .nav-link {
             color: white;
-            padding: 25px 0;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px; /* Pill shape */
         }
-        
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20L0 20z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
-            pointer-events: none;
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
-        
-        header h1 {
-            font-size: 3.2rem;
-            margin-bottom: 10px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-        
-        /* Navigation */
-        nav {
-            background-color: var(--primary);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-        
-        nav ul li {
-            margin: 5px 15px;
-        }
-        
-        nav ul li a {
+        .button-primary {
+            background-color: #D2691E; /* A vibrant orange-brown */
             color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 10px 15px;
-            display: block;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
-        nav ul li a::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        nav ul li a:hover::before {
-            left: 100%;
-        }
-        
-        nav ul li a:hover {
-            color: var(--light);
-            background-color: var(--dark);
-            transform: translateY(-2px);
-        }
-        
-        nav ul li a i {
-            margin-right: 8px;
-        }
-        
-        /* Main content */
-        .hero {
-            text-align: center;
-            padding: 70px 20px;
-            background: linear-gradient(rgba(248, 244, 233, 0.9), rgba(248, 244, 233, 0.9)), url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="%238e7c68" fill-opacity="0.05" fill-rule="evenodd"/%3E%3C/svg%3E');
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-            font-weight: 300;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin: 0 auto 30px;
-            color: var(--text);
-            max-width: 700px;
-            line-height: 1.8;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: linear-gradient(to right, var(--primary), var(--dark));
-            color: white;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 500;
-            margin: 15px 10px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(92, 75, 63, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(92, 75, 63, 0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin: 60px 0 40px;
-            color: var(--dark);
-            font-size: 2.5rem;
-            font-weight: 300;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(to right, var(--primary), var(--dark));
-            border-radius: 3px;
-        }
-        
-        /* Topics grid */
-        .topics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
-        
-        .topic-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        
-        .topic-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-        }
-        
-        .topic-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .topic-card:hover img {
-            transform: scale(1.05);
-        }
-        
-        .topic-content {
-            padding: 25px;
-        }
-        
-        .topic-content h3 {
-            color: var(--dark);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
-        
-        .topic-content p {
-            margin-bottom: 20px;
-            color: var(--text);
-            line-height: 1.7;
-        }
-        
-        /* Philosophy section */
-        .philosophy {
-            background: linear-gradient(to bottom, var(--secondary), var(--light));
-            padding: 70px 0;
-            margin: 60px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .philosophy::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235c4b3f' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-        
-        .philosophy-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .philosophy-content h2 {
-            color: var(--dark);
-            margin-bottom: 30px;
-            font-size: 2.2rem;
-            font-weight: 400;
-        }
-        
-        .philosophy-content p {
-            font-size: 1.2rem;
-            line-height: 1.9;
-            margin-bottom: 25px;
-            color: var(--text);
-        }
-        
-        /* Books section */
-        .books {
-            padding: 50px 0;
-        }
-        
-        .book-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 20px;
-        }
-        
-        .book-item {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
-        }
-        
-        .book-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-        }
-        
-        .book-item h3 {
-            color: var(--dark);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-        
-        .book-item p {
-            color: var(--text);
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-        
-        .book-item .author {
-            color: var(--primary);
-            font-style: italic;
-            font-weight: 500;
-        }
-        
-        /* Footer */
-        footer {
-            background: linear-gradient(to right, var(--dark), var(--primary));
-            color: white;
-            text-align: center;
-            padding: 50px 0 30px;
-            margin-top: 80px;
-        }
-        
-        footer p {
-            margin: 15px 0;
-            opacity: 0.9;
-        }
-        
-        footer a {
-            color: var(--secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        footer a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        .social-links {
-            margin: 25px 0;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            margin: 0 10px;
-            color: white;
-            text-align: center;
-            line-height: 45px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--light);
-            color: var(--primary);
-            transform: translateY(-5px);
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav ul li {
-                margin: 8px 0;
-                width: 100%;
-                text-align: center;
-            }
-            
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .topics {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Decorative elements */
-        .lotus {
-            display: inline-block;
-            font-size: 1.5rem;
-            margin: 0 5px;
-            color: var(--primary);
-        }
-        
-        .divider {
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--accent), transparent);
-            margin: 40px 0;
-            border: none;
-        }
-        
-        .quote {
-            font-style: italic;
-            border-left: 4px solid var(--primary);
-            padding-left: 20px;
-            margin: 25px 0;
-            color: var(--dark);
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-        
-        .author {
-            display: block;
-            text-align: right;
-            font-weight: 500;
-            color: var(--primary);
-            margin-top: 10px;
+        .button-primary:hover {
+            background-color: #E68A00;
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1><span class="lotus">🌸</span> Eons <span class="lotus">🌸</span></h1>
-            <p>Discover the timeless wisdom of Buddhist philosophy and practice</p>
+<body class="selection:bg-[#A0522D] selection:text-white">
+
+    <!-- Header Section -->
+    <header class="header-bg text-white py-6 md:py-8 lg:py-10 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+            <a href="#home_section" class="text-4xl md:text-5xl font-bold tracking-tight">Eons</a>
+            <nav class="mt-4 md:mt-0">
+                <ul class="flex flex-wrap justify-center space-x-2 md:space-x-4">
+                    <li><a href="#home_section" class="nav-link">Home</a></li>
+                    <li><a href="#history_section" class="nav-link">History</a></li>
+                    <li><a href="#teachings_section" class="nav-link">Teachings</a></li>
+                    <li><a href="#schools_section" class="nav-link">Schools</a></li>
+                    <li><a href="#meditation_section" class="nav-link">Meditation</a></li>
+                    <li><a href="#books_section" class="nav-link">Books</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#history"><i class="fas fa-history"></i> History</a></li>
-                <li><a href="#teachings"><i class="fas fa-book"></i> Teachings</a></li>
-                <li><a href="#schools"><i class="fas fa-temple"></i> Schools</a></li>
-                <li><a href="#meditation"><i class="fas fa-spa"></i> Meditation</a></li>
-                <li><a href="#resources"><i class="fas fa-hands-helping"></i> Resources</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>The Path to Mindfulness and Inner Peace</h2>
-            <p>Explore the profound teachings of Buddhism that have guided millions toward wisdom, compassion, and enlightenment for over 2,500 years.</p>
-            <a href="#teachings" class="btn">Begin Your Journey</a>
-            <a href="#meditation" class="btn btn-outline">Learn Meditation</a>
-        </div>
-    </section>
-    
-    <section class="container">
-        <h2 class="section-title">Essential Buddhist Teachings</h2>
-        <div class="topics">
-            <div class="topic-card">
-                <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80" alt="Buddha statue">
-                <div class="topic-content">
-                    <h3>The Four Noble Truths</h3>
-                    <p>The foundation of Buddhist teaching, outlining the nature of suffering, its cause, its end, and the path leading to its end.</p>
-                    <blockquote class="quote">
-                        "The root of suffering is attachment."
-                        <span class="author">- The Buddha</span>
-                    </blockquote>
-                    <a href="#four-truths" class="btn">Explore Truths</a>
-                </div>
-            </div>
-            
-            <div class="topic-card">
-                <img src="https://images.unsplash.com/photo-1584809009755-14c01cac01d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80" alt="Ancient texts">
-                <div class="topic-content">
-                    <h3>The Noble Eightfold Path</h3>
-                    <p>The practical guide to ethical and mental development to free individuals from attachments and delusions.</p>
-                    <p>This path includes Right Understanding, Right Intent, Right Speech, Right Action, Right Livelihood, Right Effort, Right Mindfulness, and Right Concentration.</p>
-                    <a href="#eightfold-path" class="btn">Discover the Path</a>
-                </div>
-            </div>
-            
-            <div class="topic-card">
-                <img src="https://images.unsplash.com/photo-1530651788726-9a6edd8ab432?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80" alt="Meditation">
-                <div class="topic-content">
-                    <h3>Meditation Practices</h3>
-                    <p>Learn about different meditation techniques in various Buddhist traditions, from mindfulness to loving-kindness practices.</p>
-                    <p>Regular meditation cultiv awareness, clarity, and emotional positivity, helping practitioners develop a deeper understanding of reality.</p>
-                    <a href="#meditation" class="btn">Start Meditating</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <hr class="divider">
-    
-    <section class="philosophy">
-        <div class="container">
-            <div class="philosophy-content">
-                <h2>Buddhism in Daily Life</h2>
-                <p>Buddhist philosophy offers practical wisdom for modern living. The practice of mindfulness helps us become more aware of our thoughts, emotions, and actions, allowing us to respond to life's challenges with wisdom rather than react impulsively.</p>
-                <p>By understanding the impermanent nature of all things, we can reduce our attachment to outcomes and find peace in the present moment. The cultivation of compassion towards ourselves and others leads to healthier relationships and a more harmonious life.</p>
-                <a href="#philosophy" class="btn">Learn Practical Applications</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="container">
-        <h2 class="section-title">Buddhist Traditions</h2>
-        <div class="topics">
-            <div class="topic-card">
-                <img src="https://images.unsplash.com/photo-1598979341340-a470cf86f098?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80" alt="Theravada Buddhism">
-                <div class="topic-content">
-                    <h3>Theravada Buddhism</h3>
-                    <p>The "Way of the Elders," focused on the earliest Buddhist texts and personal enlightenment through individual effort.</p>
-                    <p>Predominant in Sri Lanka, Myanmar, Thailand, Laos, and Cambodia, Theravada emphasizes monastic life and the original teachings of the Buddha.</p>
-                    <a href="#theravada" class="btn">Learn More</a>
-                </div>
-            </div>
-            
-            <div class="topic-card">
-                <img src="https://images.unsplash.com/photo-1549403332-6c10c
 
-New chat
+    <!-- Main Content Sections -->
+    <main class="container mx-auto py-8 px-4">
+
+        <!-- Home Section -->
+        <section id="home_section" class="min-h-screen flex flex-col justify-center items-center text-center">
+            <div class="bg-white rounded-lg shadow-xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8">
+                <img src="https://placehold.co/400x400/D2691E/white?text=Buddha+Statue" alt="Serene Buddha statue in meditation" class="rounded-lg shadow-lg w-full md:w-1/2">
+                <div class="text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#A0522D]">Welcome to Eons</h2>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        Eons is a project dedicated to exploring the profound history and philosophy of Buddhism. We believe that the timeless wisdom of the Buddha can provide guidance and peace in our modern lives. Join us on a journey to understand the core teachings, historical roots, and practical applications of this beautiful tradition.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="history_section" class="py-16 md:py-24">
+            <div class="bg-white rounded-lg shadow-xl p-8 max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#A0522D]">A Journey Through History</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                    <img src="https://placehold.co/400x500/D2691E/white?text=Pagoda" alt="A grand Buddhist pagoda" class="rounded-lg shadow-lg mb-8 md:mb-0 w-full md:w-1/2">
+                    <div class="text-lg leading-relaxed text-gray-700">
+                        <p class="mb-6">
+                            Buddhism began over 2,500 years ago with a man named Siddhartha Gautama in ancient India. Born into a wealthy royal family, he lived a life of luxury, but he felt a deep sense of unease. He saw suffering everywhere—old age, sickness, and death—and decided to leave his palace to find a way to end this suffering. After years of wandering and searching, he sat under a Bodhi tree and meditated deeply until he achieved enlightenment, becoming the Buddha, which means "The Awakened One."
+                        </p>
+                        <p class="mb-6">
+                            He then spent the rest of his life teaching others what he had learned. His teachings spread across Asia, evolving and adapting to different cultures, leading to the many schools of Buddhism we see today. The first Buddhist community was formed by his followers, called the Sangha. This community helped to preserve his teachings, which were later written down as texts called Sutras.
+                        </p>
+                        <p>
+                            From India, Buddhism traveled along ancient trade routes to places like Tibet, China, Japan, and Southeast Asia. Each region added its own unique art, traditions, and styles of practice, creating a rich and diverse global tradition.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teachings Section -->
+        <section id="teachings_section" class="py-16 md:py-24">
+            <div class="bg-white rounded-lg shadow-xl p-8 max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#A0522D]">The Core Philosophy</h2>
+                <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8">
+                    <img src="https://placehold.co/400x500/D2691E/white?text=Buddhist+Art" alt="An ancient piece of Buddhist art" class="rounded-lg shadow-lg mb-8 md:mb-0 w-full md:w-1/2">
+                    <div class="text-lg leading-relaxed text-gray-700">
+                        <p class="mb-6">
+                            At the heart of Buddhist philosophy are the **Four Noble Truths**. They are a simple framework for understanding our experience of life.
+                        </p>
+                        <ul class="list-disc list-inside space-y-4 mb-6">
+                            <li><strong class="text-[#A0522D]">The Truth of Suffering (Dukkha):</strong> Life involves suffering, dissatisfaction, and stress. This isn't just about big pain; it's also about the small frustrations we feel every day.</li>
+                            <li><strong class="text-[#A0522D]">The Truth of the Cause of Suffering (Samudaya):</strong> The cause of our suffering is craving or attachment. We want things to be a certain way, and when they aren't, we feel upset.</li>
+                            <li><strong class="text-[#A0522D]">The Truth of the End of Suffering (Nirodha):</strong> We can end suffering by letting go of craving and attachment.</li>
+                            <li><strong class="text-[#A0522D]">The Truth of the Path to the End of Suffering (Magga):</strong> The way to let go is by following the **Eightfold Path**.</li>
+                        </ul>
+                        <p class="mb-6">
+                            The **Eightfold Path** is a practical guide for daily life. It's not a set of strict rules, but rather a set of eight areas to work on. For example, "Right Mindfulness" encourages us to pay attention to our present moment without judgment. This can help you feel less stressed at work by focusing on one task at a time, or help you enjoy a meal more fully by noticing the flavors and smells instead of thinking about the past or future. "Right Speech" reminds us to use words that are helpful and kind, which can improve our relationships with others. By practicing these principles, we can find more peace and clarity in our daily routines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schools Section -->
+        <section id="schools_section" class="py-16 md:py-24">
+            <div class="bg-white rounded-lg shadow-xl p-8 max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#A0522D]">Different Paths, Same Goal</h2>
+                <div class="text-lg leading-relaxed text-gray-700">
+                    <p class="mb-6">
+                        Over time, Buddhism developed into different schools of thought. The two main branches are **Theravada** and **Mahayana**.
+                    </p>
+                    <p class="mb-6">
+                        **Theravada** Buddhism is the oldest surviving school and is popular in countries like Thailand, Sri Lanka, and Myanmar. It focuses on the teachings of the Pali Canon and aims for individual enlightenment.
+                    </p>
+                    <p>
+                        **Mahayana** Buddhism is practiced in places like China, Japan, Korea, and Vietnam. It emphasizes the goal of becoming a Bodhisattva—an enlightened being who chooses to stay and help all other beings reach enlightenment.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meditation Section -->
+        <section id="meditation_section" class="py-16 md:py-24">
+            <div class="bg-white rounded-lg shadow-xl p-8 max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#A0522D]">The Practice of Meditation</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                    <img src="https://placehold.co/400x400/D2691E/white?text=Meditation+Garden" alt="A tranquil meditation garden" class="rounded-lg shadow-lg mb-8 md:mb-0 w-full md:w-1/2">
+                    <div class="text-lg leading-relaxed text-gray-700">
+                        <p class="mb-6">
+                            Meditation is a key practice in Buddhism for training the mind. A simple way to start is with mindfulness of breath.
+                        </p>
+                        <ol class="list-decimal list-inside space-y-4">
+                            <li>Find a quiet place to sit comfortably. You can sit on a cushion or a chair.</li>
+                            <li>Close your eyes gently or look softly at the floor.</li>
+                            <li>Take a few deep breaths, and then let your breathing return to its natural pace.</li>
+                            <li>Focus your attention on the feeling of the breath entering and leaving your body. Notice the air going in and out of your nose, or the rise and fall of your belly.</li>
+                            <li>Your mind will wander. This is normal. When you notice a thought, simply acknowledge it without judgment and gently bring your attention back to your breath.</li>
+                        </ol>
+                        <p class="mt-6">
+                            Start with just a few minutes a day. The goal is not to stop thinking, but to become more aware of your thoughts and to train your focus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Books Section -->
+        <section id="books_section" class="py-16 md:py-24">
+            <div class="bg-white rounded-lg shadow-xl p-8 max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#A0522D]">Recommended Books</h2>
+                <div class="text-lg leading-relaxed text-gray-700">
+                    <p class="mb-6">
+                        If you want to learn more, here are some great books for beginners:
+                    </p>
+                    <ul class="list-disc list-inside space-y-4">
+                        <li><strong>The Heart of the Buddha's Teaching</strong> by Thich Nhat Hanh: A simple and clear guide to the core concepts of Buddhism.</li>
+                        <li><strong>What the Buddha Taught</strong> by Walpola Rahula: A classic text that provides a straightforward look at the fundamentals of Buddhist philosophy.</li>
+                        <li><strong>Mindfulness in Plain English</strong> by Bhante Gunaratana: An excellent and practical guide for anyone interested in starting a meditation practice.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="header-bg text-white py-6 text-center shadow-inner">
+        <p>&copy; 2025 Eons. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
